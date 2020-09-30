@@ -26,7 +26,6 @@ var bcolor = 0;
 
 const tol = 2;
 
-
 function setup() {
     createCanvas(width, height);
     background(bcolor);
