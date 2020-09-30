@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.title {
+    width: 100%;
+    text-align: center;
+    font-size: 5vw;
+}
+
+#maintitle {
+    font-weight: 300;
+}
+
+#projectstitle {
+    font-size: 4vw;
+    font-weight: 700;
+}
+
+.parent>*, .parent>*>*>img {
+    margin-top: 2.5vh;
+}
+
+.parent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.parent>* {
+    width: 275px;
+    height: 500px;
+    background: #D3D3D3;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 5px #3E3E3E;
+    transition: box-shadow 0.25s ease;
+}
+
+.parent>*:hover {
+    box-shadow: 0 0 25px #3E3E3E;
+}
+
+.parent>*>*>img {
+    border-radius: 15px;
+}
+
+.parent>*>*>img {
+    box-shadow: 0 0 5px #3E3E3E;
+    transition: box-shadow 0.25s ease;
+}
