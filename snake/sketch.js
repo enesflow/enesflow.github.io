@@ -3,32 +3,45 @@ function random(min, max) {
     return Math.round(randomNum);
 }
 
-const width = 500;
-const height = width;
+const sizesub = 50;
+
+let width = Math.min(innerWidth, innerHeight) - sizesub;
+let height = width;
 
 var sWidth = width / 25;
 var sHeight = height / 25;
 
-var x = 0 - sWidth/* + sWidth*/;
-var y = 0/*sWidth*/;
+var x = 0 - sWidth /* + sWidth*/ ;
+var y = 0 /*sWidth*/ ;
 
-var fx = Math.floor(random(0,width) / (sWidth)) * sWidth;
-var fy = Math.floor(random(0,height) / (sWidth)) * sWidth;
+var fx = Math.floor(random(0, width) / (sWidth)) * sWidth;
+var fy = Math.floor(random(0, height) / (sWidth)) * sWidth;
 
-var orn = [1,0];
+var orn = [1, 0];
 
 var posListx = [];
 var posListy = [];
 var lenght = 4;
 var bcolor = 0;
 
+const tol = 2;
+
 
 function setup() {
     createCanvas(width, height);
     background(bcolor);
     frameRate(5);
+
 }
+
 function draw() {
+
+
+    width = Math.min(innerWidth, innerHeight) - sizesub;
+    height = width;
+
+
+
     keyPressed();
 
 
@@ -45,12 +58,12 @@ function draw() {
     y += orn[1] * sHeight;
 
 
-    if ((x === fx) && (y == fy)) {
+    if (((x + tol >= fx) && (x - tol <= fx)) && ((y + tol >= fy) && (y - tol <= fy))) {
         lenght += 1;
         while (true) {
-            fx = Math.floor(random(0,width) / (sWidth)) * sWidth;
-            fy = Math.floor(random(0,height) / (sWidth)) * sWidth;
-            if (amiin(fx,fy)) {
+            fx = Math.floor(random(0, width) / (sWidth)) * sWidth;
+            fy = Math.floor(random(0, height) / (sWidth)) * sWidth;
+            if (amiin(fx, fy)) {
                 continue
             }
             break;
@@ -63,7 +76,7 @@ function draw() {
     snakeRemover();
     drawFood();
 
-    if (amiin(x,y)) {
+    if (amiin(x, y)) {
         location.reload();
     }
     if (((x < 0) || (x > (width - sWidth)) || ((y < 0) || (y > (height - sWidth))))) {
@@ -75,14 +88,14 @@ function draw() {
 }
 
 function keyPressed() {
-    if ((keyCode == LEFT_ARROW) && (orn[0] != 1)){
-        orn = [-1,0];
-    } else if ((keyCode == RIGHT_ARROW) && (orn[0] != -1)) {
-        orn = [1,0];
-    } else if ((keyCode == DOWN_ARROW) && (orn[1] != -1)) {
-        orn = [0,1];
-    } else if ((keyCode == UP_ARROW) && (orn[1] != 1)) {
-        orn = [0,-1];
+    if (keyCode == LEFT_ARROW) {
+        or("left");
+    } else if (keyCode == RIGHT_ARROW) {
+        or("right");
+    } else if (keyCode == DOWN_ARROW) {
+        or("down");
+    } else if (keyCode == UP_ARROW) {
+        or("up");
     }
 }
 
@@ -99,15 +112,95 @@ function amiin(wx, wy) {
     return false;
 }
 
+function or(what) {
+    if ((what === "left") && (orn[0] != 1)) {
+        orn = [-1, 0];
+    }
+    if ((what === "right") && (orn[0] != -1)) {
+        orn = [1, 0];
+    }
+    if ((what === "down") && (orn[1] != -1)) {
+        orn = [0, 1];
+    }
+    if ((what === "up") && (orn[1] != 1)) {
+        orn = [0, -1];
+    }
+}
+
+function lmove() {
+    or("left");
+}
+
+function rmove() {
+    or("right");
+}
+
+function dmove() {
+    or("down");
+}
+
+function umove() {
+    or("up");
+}
+
 function drawSnake() {
     fill(255);
-    rect(x,y,sWidth,sHeight);
+    rect(x, y, sWidth, sHeight);
 }
+
 function snakeRemover() {
     fill(0);
-    rect(posListx[0],posListy[0],sWidth,sHeight);
+    rect(posListx[0], posListy[0], sWidth, sHeight);
 }
+
 function drawFood() {
-    fill(255,0,0);
-    rect(fx,fy,sWidth,sHeight);
+    fill(255, 0, 0);
+    rect(fx, fy, sWidth, sHeight);
 }
+
+//Stackoverflow
+document.addEventListener('touchstart', handleTouchStart, false);
+document.addEventListener('touchmove', handleTouchMove, false);
+
+var xDown = null;
+var yDown = null;
+
+function getTouches(evt) {
+  return evt.touches ||             // browser API
+         evt.originalEvent.touches; // jQuery
+}
+
+function handleTouchStart(evt) {
+    const firstTouch = getTouches(evt)[0];
+    xDown = firstTouch.clientX;
+    yDown = firstTouch.clientY;
+};
+
+function handleTouchMove(evt) {
+    if ( ! xDown || ! yDown ) {
+        return;
+    }
+
+    var xUp = evt.touches[0].clientX;
+    var yUp = evt.touches[0].clientY;
+
+    var xDiff = xDown - xUp;
+    var yDiff = yDown - yUp;
+
+    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
+        if ( xDiff > 0 ) {
+            or("left");
+        } else {
+            or("right");
+        }
+    } else {
+        if ( yDiff > 0 ) {
+            or("up");
+        } else {
+            or("down");
+        }
+    }
+    /* reset values */
+    xDown = null;
+    yDown = null;
+};
