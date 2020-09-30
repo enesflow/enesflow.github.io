@@ -35,7 +35,6 @@ function setup() {
 
 function draw() {
 
-
     width = Math.min(innerWidth, innerHeight) - sizesub;
     height = width;
 
