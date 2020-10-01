@@ -76,6 +76,19 @@ function draw() {
     y += orn[1] * sHeight;
 
 
+    if (amiin(x, y)) {
+        deadscreen.style.display = "inline-block";
+        deadtext.innerHTML = ("Dead! Score: " + (lenght - 4));
+        isdead = true;
+
+    }
+    if (((x < 0) || (x > (width - sWidth)) || ((y < 0) || (y > (height - sWidth))))) {
+        deadscreen.style.display = "inline-block";
+        deadtext.innerHTML = ("Dead! Score: " + (lenght - 4));
+        isdead = true;
+
+    }
+
     if (((x + tol >= fx) && (x - tol <= fx)) && ((y + tol >= fy) && (y - tol <= fy))) {
         lenght += 1;
         while (true) {
@@ -94,18 +107,6 @@ function draw() {
     snakeRemover();
     drawFood();
 
-    if (amiin(x, y)) {
-        deadscreen.style.display = "inline-block";
-        deadtext.innerHTML = ("Dead! Score: " + (lenght - 4));
-        isdead = true;
-
-    }
-    if (((x < 0) || (x > (width - sWidth)) || ((y < 0) || (y > (height - sWidth))))) {
-        deadscreen.style.display = "inline-block";
-        deadtext.innerHTML = ("Dead! Score: " + (lenght - 4));
-        isdead = true;
-
-    }
 
 
 
