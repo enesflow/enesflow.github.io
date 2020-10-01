@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Snake</title>
+    <title>p5.js</title>
     <style media="screen">
         * {
             position: absolute;
@@ -13,10 +13,27 @@
             left: 50%;
             transform: translateX(-50%);
         }
+
+        .dead {
+            width: 100vw;
+            height: 100vh;
+            background: red;
+            z-index: 1;
+            display: none;
+        }
+        .dead > h1 {
+            font-size: 20vh;
+            font-family: sans-serif;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
     </style>
 </head>
 
 <body>
+    <div id="dead" class="dead"><h1 id="deadtext">Dead!</h1></div>
     <script src="p5.min.js"></script>
     <script src="sketch.js"></script>
 </body>
