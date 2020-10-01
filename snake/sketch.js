@@ -80,7 +80,9 @@ function draw() {
         location.reload();
     }
     if (((x < 0) || (x > (width - sWidth)) || ((y < 0) || (y > (height - sWidth))))) {
-        location.reload();
+        setInterval(function() {
+            location.reload();
+        }, 3000);
     }
 
 
@@ -125,22 +127,6 @@ function or(what) {
     if ((what === "up") && (orn[1] != 1)) {
         orn = [0, -1];
     }
-}
-
-function lmove() {
-    or("left");
-}
-
-function rmove() {
-    or("right");
-}
-
-function dmove() {
-    or("down");
-}
-
-function umove() {
-    or("up");
 }
 
 function drawSnake() {
