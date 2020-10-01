@@ -1,107 +1,93 @@
 
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="github.svg">
     <title>Document</title>
     <meta http-equiv = "refresh" content = "2; url = https://enxgithub.github.io/website/home/" />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            color: red;
+        @keyframes loader {
+             0%, 10%, 100% {
+                 width: 80px;
+                 height: 80px;
+            }
+             65% {
+                 width: 150px;
+                 height: 150px;
+            }
         }
-
-        .icon {
-            width: 5vh;
-            height: 5vh;
-            margin: 10px 10px;
+         @keyframes loaderBlock {
+             0%, 30% {
+                 transform: rotate(0);
+            }
+             55% {
+                 background-color: #f37272;
+            }
+             100% {
+                 transform: rotate(90deg);
+            }
         }
-
-        .parent {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            -webkit-transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-            width: 100%;
+         @keyframes loaderBlockInverse {
+             0%, 20% {
+                 transform: rotate(0);
+            }
+             55% {
+                 background-color: #f37272;
+            }
+             100% {
+                 transform: rotate(-90deg);
+            }
         }
-
-        .back {
-            position: absolute;
-            width: 100%;
-            height: 100vh;
-            background: black
-            opacity: 0;
+         .loader {
+             position: absolute;
+             top: 50%;
+             left: 50%;
+             width: 80px;
+             height: 80px;
+             transform: translate(-50%, -50%) rotate(45deg) translate3d(0, 0, 0);
+             animation: loader 1.2s infinite ease-in-out;
         }
-
-        a {
-            position: absolute;
+         .loader span {
+             position: absolute;
+             display: block;
+             width: 40px;
+             height: 40px;
+             background-color: #ee4040;
+             animation: loaderBlock 1.2s infinite ease-in-out both;
         }
-
+         .loader span:nth-child(1) {
+             top: 0;
+             left: 0;
+        }
+         .loader span:nth-child(2) {
+             top: 0;
+             right: 0;
+             animation: loaderBlockInverse 1.2s infinite ease-in-out both;
+        }
+         .loader span:nth-child(3) {
+             bottom: 0;
+             left: 0;
+             animation: loaderBlockInverse 1.2s infinite ease-in-out both;
+        }
+         .loader span:nth-child(4) {
+             bottom: 0;
+             right: 0;
+        }
+         body {
+             background-color: #ffffff;
+        }
 
     </style>
 </style>
 </head>
 <body>
-    <div class="back"><div id="parent" class="parent"></div></div>
-    <script>
-        var ischanged = false;
-
-        load(1000, 5, 3, "rgb(0,0,0)", "rgb(255,255,255)", true);
-        setInterval(function(e) {
-            load(1000, 5, 3, "rgb(0,0,0)", "rgb(255,255,255)", false);
-        }, 1000 / 2);
-
-        function load(delay, t, count, fc, sc, start) {
-            if (start) {
-                const defsvg = '<svg class="icon" width="200" height="200"><rect width="200" height="200" fill="' + fc + '" id="rect"/></svg>';
-                var svg = "";
-                const parent = document.getElementById("parent");
-
-
-                for (var i = 0; i < count; i++) {
-                    let span = document.createElement('span');
-                    span.innerHTML = defsvg;
-                    parent.appendChild(span);
-
-                    parent.innerHtml = svg;
-
-                }
-
-
-                parent.style.display = "flex";
-                parent.style.flexWrap = "wrap";
-                parent.style.justifyContent = "center";
-
-            } else {
-                if ((ischanged)) {
-                    console.log("yes")
-                    TweenLite.to("rect", {
-                        stagger: delay / 1000 / t,
-                        fill: fc,
-                        duration: delay / 1000 / t
-                    });
-                    ischanged = false;
-                } else {
-                    console.log("no")
-                    TweenLite.to("rect", {
-                        stagger: delay / 1000 / t,
-                        fill: sc,
-                        duration: delay / 1000 / t
-                    });
-                    ischanged = true;
-                }
-            }
-
-
-        }
-
-    </script>
+    <div class="loader">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 </body>
 </html>
