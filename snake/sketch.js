@@ -27,6 +27,10 @@ var bcolor = 0;
 const tol = 2;
 
 
+const deadscreen = document.getElementById("dead");
+const deadtext = document.getElementById("deadtext");
+
+
 function setup() {
     createCanvas(width, height);
     background(bcolor);
@@ -77,10 +81,18 @@ function draw() {
     drawFood();
 
     if (amiin(x, y)) {
-        location.reload();
+        deadscreen.style.display = "inline-block";
+        deadtext.innerHTML = ("Dead! Score: " + (lenght - 4));
+        setTimeout(function() {
+            location.reload();
+        },500);
     }
     if (((x < 0) || (x > (width - sWidth)) || ((y < 0) || (y > (height - sWidth))))) {
-        location.reload();
+        deadscreen.style.display = "inline-block";
+        deadtext.innerHTML = ("Dead! Score: " + (lenght - 4));
+        setTimeout(function() {
+            location.reload();
+        },500);
     }
 
 
