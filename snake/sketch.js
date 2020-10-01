@@ -78,15 +78,12 @@ function draw() {
 
     if (amiin(x, y)) {
         location.reload();
-        setInterval(function() {
-            location.reload();
-        }, 3000);
     }
     if (((x < 0) || (x > (width - sWidth)) || ((y < 0) || (y > (height - sWidth))))) {
         location.reload();
         setInterval(function() {
             location.reload();
-        }, 3000);
+        }, 500);
     }
 
 
