@@ -26,9 +26,23 @@ var bcolor = 0;
 
 const tol = 2;
 
+var isdead = false;
+
 
 const deadscreen = document.getElementById("dead");
 const deadtext = document.getElementById("deadtext");
+
+
+document.onkeypress=function(e){
+    if (isdead) {
+        location.reload();
+    }
+}
+deadscreen.addEventListener("click", function() {
+    if (isdead) {
+        location.reload();
+    }
+});
 
 
 function setup() {
@@ -83,16 +97,14 @@ function draw() {
     if (amiin(x, y)) {
         deadscreen.style.display = "inline-block";
         deadtext.innerHTML = ("Dead! Score: " + (lenght - 4));
-        setTimeout(function() {
-            location.reload();
-        },500);
+        isdead = true;
+
     }
     if (((x < 0) || (x > (width - sWidth)) || ((y < 0) || (y > (height - sWidth))))) {
         deadscreen.style.display = "inline-block";
         deadtext.innerHTML = ("Dead! Score: " + (lenght - 4));
-        setTimeout(function() {
-            location.reload();
-        },500);
+        isdead = true;
+
     }
 
 
@@ -162,8 +174,8 @@ var xDown = null;
 var yDown = null;
 
 function getTouches(evt) {
-  return evt.touches ||             // browser API
-         evt.originalEvent.touches; // jQuery
+    return evt.touches || // browser API
+        evt.originalEvent.touches; // jQuery
 }
 
 function handleTouchStart(evt) {
@@ -173,7 +185,7 @@ function handleTouchStart(evt) {
 };
 
 function handleTouchMove(evt) {
-    if ( ! xDown || ! yDown ) {
+    if (!xDown || !yDown) {
         return;
     }
 
@@ -183,14 +195,15 @@ function handleTouchMove(evt) {
     var xDiff = xDown - xUp;
     var yDiff = yDown - yUp;
 
-    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
-        if ( xDiff > 0 ) {
+    if (Math.abs(xDiff) > Math.abs(yDiff)) {
+        /*most significant*/
+        if (xDiff > 0) {
             or("left");
         } else {
             or("right");
         }
     } else {
-        if ( yDiff > 0 ) {
+        if (yDiff > 0) {
             or("up");
         } else {
             or("down");
