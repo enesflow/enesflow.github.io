@@ -12,6 +12,7 @@
             box-sizing: border-box;
             left: 50%;
             transform: translateX(-50%);
+            font-family: sans-serif;
         }
 
         .dead {
@@ -22,18 +23,30 @@
             display: none;
         }
         .dead > h1 {
-            font-size: 20vh;
-            font-family: sans-serif;
+            font-size: 12vw;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        .hey{
+            position: absolute;
+            margin-right: 45vw;
+            margin-top: 90vh;
+            width: 100%;
+
+        }
+        .hey > h5 {
+            font-size: 3vw;
+            white-space: nowrap;
         }
     </style>
 </head>
 
 <body>
-    <div id="dead" class="dead"><h1 id="deadtext">Dead!</h1></div>
+    <div id="dead" class="dead"><h1 id="deadtext">You do not see this!</h1><div class="hey"><h5 id="pressakey">Press any key or tap the screen to restart</h5></div></div>
+
     <script src="p5.min.js"></script>
     <script src="sketch.js"></script>
 </body>
