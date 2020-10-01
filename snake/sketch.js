@@ -81,9 +81,6 @@ function draw() {
     }
     if (((x < 0) || (x > (width - sWidth)) || ((y < 0) || (y > (height - sWidth))))) {
         location.reload();
-        setInterval(function() {
-            location.reload();
-        }, 500);
     }
 
 
