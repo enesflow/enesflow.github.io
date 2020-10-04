@@ -75,7 +75,11 @@
         } else if (highlight == "Github") {
             document.getElementById("a").href = "https://enxgithub.github.io/website/";
         }
-        document.getElementById("try").innerHTML = "Try Going to " + highlight;
+        if (highlight == "Github") {
+            document.getElementById("try").innerHTML = "Try Going to " + highlight + " Pages";
+        } else {
+            document.getElementById("try").innerHTML = "Try Going to " + highlight;
+        }
         document.getElementById("h3").innerHTML = highlight;
         document.getElementById("img").src = highlight.toLowerCase() + ".svg";
     </script>
