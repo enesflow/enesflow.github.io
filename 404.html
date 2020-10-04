@@ -1,1 +1,57 @@
-404 thats an error
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="github.svg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        ::selection {
+            color: white;
+            background: black;
+        }
+
+        #fof {
+            font-size: 40vw;
+            color: #ff6961;
+        }
+
+        a {
+            color: blue;
+        }
+
+    </style>
+    <title>404 Not Found</title>
+</head>
+
+<body>
+    <h1 id="fof">404</h1>
+    <h1 id="info">Don't panic, it's just that this page does not exists</h1>
+    <a id="home" href="#">Try going back to the main page?</a>
+    <script>
+        const url = window.location.href;
+
+        let highlight = null;
+        if (url.includes("netlify.app")) {
+            document.getElementById("home").href = "https://enxgithub.netlify.app";
+        }
+        if (url.includes("github.io")) {
+            document.getElementById("home").href = "https://enxgithub.github.io/website";
+        }
+        if (url.includes("herokuapp.com")) {
+            document.getElementById("home").href = "https://enxgithub.herokuapp.com";
+        }
+    </script>
+</body>
+
+</html>
