@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="../github.svg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            text-align: center;
+            text-decoration: none;
+            font-family: sans-serif;
+            color: #000;
+        }
+
+        h1 {
+            margin-top: 1%;
+        }
+
+        h2,
+        .parent {
+            margin-top: 2%;
+        }
+
+        .parent {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+
+        .parent>a>div {
+            background: #EEEEEE;
+            width: 25vw;
+            border: 2px solid black;
+            border-radius: 15px;
+        }
+
+        .parent>a>div>img {
+            width: 20vw;
+        }
+    </style>
+    <title>EnxGitHub - Trouble</title>
+</head>
+
+<body>
+    <h1>Having Trouble?</h1>
+    <h2 id="try">Try Going to</h2>
+    <div class="parent">
+        <a id="a" href="http://enxgithub.github.io/website/">
+            <div id="div" class="div">
+                <h3 id="h3">Github Pages</h3>
+                <img id="img" src="#" alt="Image">
+            </div>
+        </a>
+    </div>
+
+    <script>
+        const url = window.location.href;
+
+        let highlight = null;
+        if (url.includes("netlify")) {
+            highlight = "Github";
+        }
+        if (url.includes("github")) {
+            highlight = "Netlify";
+        }
+        if (highlight == "Netlify") {
+            document.getElementById("a").href = "https://enxgithub.netlify.app/";
+        } else if (highlight == "Github") {
+            document.getElementById("a").href = "https://enxgithub.github.io/website/";
+        }
+        document.getElementById("try").innerHTML = "Try Going to " + highlight;
+        document.getElementById("h3").innerHTML = highlight;
+        document.getElementById("img").src = highlight.toLowerCase() + ".svg";
+    </script>
+</body>
+
+</html>
