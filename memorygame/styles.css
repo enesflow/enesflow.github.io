@@ -41,8 +41,8 @@
 .card {
     background-attachment: fixed;
     display: inline-block;
-    width: min(13.66vh, 7.68vw);
-    height: min(13.66vh, 7.68vw);
+    width: min(13.66vh, 13.66vw);
+    height: min(13.66vh, 13.66vw);
     background: #ddd7d7;
     transition: all 0.25s ease;
     cursor: pointer;
@@ -123,6 +123,7 @@
     margin-top: 10vh;
     cursor: pointer;
     width: 10vh;
+    height: 10vh;
 }
 
 .switch-button:hover {
