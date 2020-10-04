@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="../github.svg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            overflow: hidden;
+        }
+
+        .top {
+            background: rgb(30, 30, 30);
+            color: white;
+            text-align: center;
+        }
+
+        .parent {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+
+        .box {
+            width: min(20vh, 20vw);
+            height: min(20vh, 20vw);
+            background-color: red;
+            cursor: pointer;
+            border: 5px solid black;
+            border-radius: 15px;
+            transition: all 0.25s ease;
+        }
+
+        .box:hover {
+            border-bottom: 20px solid black;
+            border-right: 20px solid black;
+            border-radius: 0px;
+        }
+
+
+        img {
+            position: absolute;
+            width: min(20vh, 20vw);
+            margin: 1% 1%;
+            right: 0%;
+            bottom: 0%;
+            font-size: min(20vh, 20vw);
+        }
+
+        #health {
+            position: absolute;
+            width: min(20vh, 20vw);
+            margin: 3.25% -2.5%;
+            right: 0%;
+            bottom: 0%;
+            font-size: min(10vh, 10vw);
+            z-index: 1;
+        }
+
+        #score {
+            position: absolute;
+            left: 0%;
+            bottom: 0%;
+            font-size: min(20vh, 20vw);
+        }
+
+        @keyframes shake {
+            0% {
+                transform: translate(1px, 1px) rotate(0deg);
+            }
+
+            10% {
+                transform: translate(-1px, -2px) rotate(-1deg);
+            }
+
+            20% {
+                transform: translate(-3px, 0px) rotate(1deg);
+            }
+
+            30% {
+                transform: translate(3px, 2px) rotate(0deg);
+            }
+
+            40% {
+                transform: translate(1px, -1px) rotate(1deg);
+            }
+
+            50% {
+                transform: translate(-1px, 2px) rotate(-1deg);
+            }
+
+            60% {
+                transform: translate(-3px, 1px) rotate(0deg);
+            }
+
+            70% {
+                transform: translate(3px, 1px) rotate(-1deg);
+            }
+
+            80% {
+                transform: translate(-1px, -1px) rotate(1deg);
+            }
+
+            90% {
+                transform: translate(1px, 2px) rotate(0deg);
+            }
+
+            100% {
+                transform: translate(1px, -2px) rotate(-1deg);
+            }
+        }
+    </style>
+    <title>Guess the Color</title>
+</head>
+
+<body>
+    <div class="top">
+        <br>
+        <h1 id="color">rgb(0,0,0)</h1>
+        <br>
+    </div>
+    <br>
+    <div class="parent">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    <h1 id="score">Score: ?</h1>
+    <script>
+        let score = 0;
+        reload();
+
+        function reload() {
+
+            document.getElementById("score").innerHTML = `Score: ${score}`;
+            let boxes = document.getElementsByClassName("box");
+            let title = document.getElementById("color");
+            var colors = [];
+            var color = null;
+            var rgbcolor = null;
+            for (var i = 0; i < boxes.length; i++) {
+                boxes[i].style.background = getRandomColor();
+                boxes[i].addEventListener("click", function(e) {
+                    if (e.target.style.background == rgbcolor) {
+
+                        title.style.color = "#77dd77";
+                        title.style.animation = "shake 0.5s";
+                        setTimeout(function(e) {
+                            title.style.color = "white";
+                            title.style.animation = "none";
+                        }, 500);
+                        score++;
+                        reload();
+                    } else {
+                        title.style.color = "#ff6961";
+                        title.style.animation = "shake 0.5s";
+                        setTimeout(function(e) {
+                            title.style.color = "white";
+                            title.style.animation = "none";
+                        }, 500);
+                    }
+                });
+            }
+            color = colors[Math.floor(Math.random() * colors.length)];
+            rgbcolor = `rgb(${hexToRgb(color)["r"]}, ${hexToRgb(color)["g"]}, ${hexToRgb(color)["b"]})`;
+            document.getElementById("color").innerHTML = rgbcolor;
+
+            //Stack Overflow
+            function getRandomColor() {
+                var letters = '0123456789ABCDEF';
+                var randcolor = '#';
+                for (var i = 0; i < 6; i++) {
+                    randcolor += letters[Math.floor(Math.random() * 16)];
+                }
+                colors.push(randcolor);
+                return randcolor;
+            }
+
+            function hexToRgb(hex) {
+                var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+                return result ? {
+                    r: parseInt(result[1], 16),
+                    g: parseInt(result[2], 16),
+                    b: parseInt(result[3], 16)
+                } : null;
+            }
+        }
+    </script>
+</body>
+
+</html>
