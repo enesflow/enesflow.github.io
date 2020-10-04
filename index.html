@@ -1,94 +1,92 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Loading</title>
-    <link rel="icon" href="github.svg"></link>
-    <meta http-equiv = "refresh" content = "2; url = home" />
+    <link rel="icon" href="../github.svg">
     <style>
-        @keyframes loader {
-             0%, 10%, 100% {
-                 width: 80px;
-                 height: 80px;
-            }
-             65% {
-                 width: 150px;
-                 height: 150px;
-            }
-        }
-         @keyframes loaderBlock {
-             0%, 30% {
-                 transform: rotate(0);
-            }
-             55% {
-                 background-color: #f37272;
-            }
-             100% {
-                 transform: rotate(90deg);
-            }
-        }
-         @keyframes loaderBlockInverse {
-             0%, 20% {
-                 transform: rotate(0);
-            }
-             55% {
-                 background-color: #f37272;
-            }
-             100% {
-                 transform: rotate(-90deg);
-            }
-        }
-         .loader {
-             position: absolute;
-             top: 50%;
-             left: 50%;
-             width: 80px;
-             height: 80px;
-             transform: translate(-50%, -50%) rotate(45deg) translate3d(0, 0, 0);
-             animation: loader 1.2s infinite ease-in-out;
-        }
-         .loader span {
-             position: absolute;
-             display: block;
-             width: 40px;
-             height: 40px;
-             background-color: #ee4040;
-             animation: loaderBlock 1.2s infinite ease-in-out both;
-        }
-         .loader span:nth-child(1) {
-             top: 0;
-             left: 0;
-        }
-         .loader span:nth-child(2) {
-             top: 0;
-             right: 0;
-             animation: loaderBlockInverse 1.2s infinite ease-in-out both;
-        }
-         .loader span:nth-child(3) {
-             bottom: 0;
-             left: 0;
-             animation: loaderBlockInverse 1.2s infinite ease-in-out both;
-        }
-         .loader span:nth-child(4) {
-             bottom: 0;
-             right: 0;
-        }
-         body {
-             background-color: #ffffff;
+        * {
+            margin: 0;
+            padding: 0;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            text-align: center;
+            text-decoration: none;
+            font-family: sans-serif;
+            color: #000;
         }
 
+        h1 {
+            margin-top: 1%;
+        }
+
+        h2,
+        .parent {
+            margin-top: 2%;
+        }
+
+        .parent {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+
+        .parent>a>div {
+            background: #EEEEEE;
+            width: 25vw;
+            border: 2px solid black;
+            border-radius: 15px;
+        }
+
+        .parent>a>div>img {
+            width: 20vw;
+        }
     </style>
-</style>
+    <title>EnxGitHub - Trouble</title>
 </head>
+
 <body>
-    <div class="loader">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
+    <h1>Having Trouble?</h1>
+    <h2 id="try">Try These</h2>
+    <div class="parent">
+        <a id="github" href="https://enxgithub.github.io/website/">
+            <div id="div" class="div">
+                <h3 id="h3">Github Pages</h3>
+                <img id="img" src="github.svg" alt="Image">
+            </div>
+        </a>
+        <a id="netlify" href="https://enxgithub.netlify.app/">
+            <div id="div" class="div">
+                <h3 id="h3">Netlify</h3>
+                <img id="img" src="netlify.svg" alt="Image">
+            </div>
+        </a>
+        <a id="heroku" href="https://enxgithub.herokuapp.com/">
+            <div id="div" class="div">
+                <h3 id="h3">Heroku</h3>
+                <img id="img" src="heroku.svg" alt="Image">
+            </div>
+        </a>
     </div>
+
+    <script>
+        const url = window.location.href;
+
+        let highlight = null;
+        if (url.includes("netlify.app")) {
+            highlight = "netlify";
+        }
+        if (url.includes("github.io")) {
+            highlight = "github";
+        }
+        if (url.includes("herokuapp.com")) {
+            highlight = "heroku";
+        }
+        document.getElementById(highlight).style.display = "none";
+    </script>
 </body>
+
 </html>
