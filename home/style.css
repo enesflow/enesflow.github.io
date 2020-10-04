@@ -5,6 +5,12 @@
     font-family: sans-serif;
 }
 
+#trouble {
+    color: blue;
+    text-decoration: none;
+    text-align: end;
+}
+
 .title {
     width: 100%;
     text-align: center;
