@@ -50,12 +50,24 @@
 
 <body>
     <h1>Having Trouble?</h1>
-    <h2 id="try">Try Going to</h2>
+    <h2 id="try">Try These</h2>
     <div class="parent">
-        <a id="a" href="http://enxgithub.github.io/website/">
+        <a id="github" href="https://enxgithub.github.io/website/">
             <div id="div" class="div">
                 <h3 id="h3">Github Pages</h3>
-                <img id="img" src="#" alt="Image">
+                <img id="img" src="github.svg" alt="Image">
+            </div>
+        </a>
+        <a id="netlify" href="https://enxgithub.netlify.app/">
+            <div id="div" class="div">
+                <h3 id="h3">Netlify</h3>
+                <img id="img" src="netlify.svg" alt="Image">
+            </div>
+        </a>
+        <a id="heroku" href="https://enxgithub.herokuapp.com/">
+            <div id="div" class="div">
+                <h3 id="h3">Heroku</h3>
+                <img id="img" src="heroku.svg" alt="Image">
             </div>
         </a>
     </div>
@@ -65,24 +77,15 @@
 
         let highlight = null;
         if (url.includes("netlify.app")) {
-            highlight = "Github";
+            highlight = "netlify";
         }
         if (url.includes("github.io")) {
-            highlight = "Netlify";
+            highlight = "github";
         }
-        if (highlight == "Netlify") {
-            document.getElementById("a").href = "https://enxgithub.netlify.app/";
-        } else if (highlight == "Github") {
-            document.getElementById("a").href = "https://enxgithub.github.io/website/";
+        if (url.includes("herokuapp.com")) {
+            highlight = "heroku";
         }
-        if (highlight == "Github") {
-            document.getElementById("try").innerHTML = "Try Going to " + highlight + " Pages";
-            document.getElementById("h3").innerHTML = highlight + " Pages";
-        } else {
-            document.getElementById("try").innerHTML = "Try Going to " + highlight;
-            document.getElementById("h3").innerHTML = highlight;
-        }
-        document.getElementById("img").src = highlight.toLowerCase() + ".svg";
+        document.getElementById(highlight).style.display = "none";
     </script>
 </body>
 
