@@ -1,95 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="github.svg">
-    <title>Loading</title>
-    <meta http-equiv = "refresh" content = "2; url = home" />
-    <style>
-        @keyframes loader {
-             0%, 10%, 100% {
-                 width: 80px;
-                 height: 80px;
-            }
-             65% {
-                 width: 150px;
-                 height: 150px;
-            }
-        }
-         @keyframes loaderBlock {
-             0%, 30% {
-                 transform: rotate(0);
-            }
-             55% {
-                 background-color: #f37272;
-            }
-             100% {
-                 transform: rotate(90deg);
-            }
-        }
-         @keyframes loaderBlockInverse {
-             0%, 20% {
-                 transform: rotate(0);
-            }
-             55% {
-                 background-color: #f37272;
-            }
-             100% {
-                 transform: rotate(-90deg);
-            }
-        }
-         .loader {
-             position: absolute;
-             top: 50%;
-             left: 50%;
-             width: 80px;
-             height: 80px;
-             transform: translate(-50%, -50%) rotate(45deg) translate3d(0, 0, 0);
-             animation: loader 1.2s infinite ease-in-out;
-        }
-         .loader span {
-             position: absolute;
-             display: block;
-             width: 40px;
-             height: 40px;
-             background-color: #ee4040;
-             animation: loaderBlock 1.2s infinite ease-in-out both;
-        }
-         .loader span:nth-child(1) {
-             top: 0;
-             left: 0;
-        }
-         .loader span:nth-child(2) {
-             top: 0;
-             right: 0;
-             animation: loaderBlockInverse 1.2s infinite ease-in-out both;
-        }
-         .loader span:nth-child(3) {
-             bottom: 0;
-             left: 0;
-             animation: loaderBlockInverse 1.2s infinite ease-in-out both;
-        }
-         .loader span:nth-child(4) {
-             bottom: 0;
-             right: 0;
-        }
-         body {
-             background-color: #ffffff;
-        }
-
-    </style>
-</style>
+    <link rel="icon" href="../github.svg">
+    <title>EnxGitHub - Home</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
-    <div class="loader">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
+
+
+    <div id="loader" class="loader">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
-    
+
+    <h1 class="title" id="maintitle">EnxGitHub</h1>
+    <br>
+    <div class="whiteback"></div>
+    <h1 class="title" id="projectstitle">Projects</h1>
+    <div class="parent">
+        <div class="snake project">
+            <a href="./snake">
+                <img class="img" src="_images/snakeicon.png" alt="Snake" width="250" height="250">
+            </a>
+            <h1>Snake</h1>
+            <p>A classic snake game made in JavaScript using p5.js</p>
+        </div>
+        <div class="clock project">
+            <a href="./clock">
+                <img class="img" src="_images/clockicon.png" alt="Clock" width="250" height="250">
+            </a>
+            <h1>Clock</h1>
+            <p>A cool clock made in JavaScript using p5.js</p>
+        </div>
+        <div class="memorygame project">
+            <a href="./memorygame">
+                <img class="img" src="_images/memorygameicon.png" alt="Memory Game" width="250" height="250">
+            </a>
+            <h1>Memory Game</h1>
+            <p>A card flipping game to test your memory</p>
+        </div>
+        <div class="guessthecolor project">
+            <a href="./guessthecolor">
+                <img class="img" src="_images/guessthecoloricon.png" alt="Guess the Color" width="250" height="250">
+            </a>
+            <h1>Guess the Color</h1>
+            <p>Guess the given color by the RGB value</p>
+        </div>
+        <div class="aiimage project">
+            <a href="./ai">
+                <img class="img" src="_images/ai.jpg" alt="Image Recognition AI" width="250" height="250">
+            </a>
+            <h1>Image Recognition AI</h1>
+            <p>Image Recognition AI made with ml5.js and p5.js</p>
+        </div>
+    </div>
+    <br>
+    <br>
+    <a id="trouble" href="../trouble">
+        <h3>Having Trouble?</h3>
+    </a>
+    <script src="main.js"></script>
 </body>
+
 </html>
