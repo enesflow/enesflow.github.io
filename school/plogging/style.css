@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+    --def-font-size: 30.052px;
+    --def-black: #4f5358;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    zoom: 95%;
+}
+
+.title {
+    text-align: center;
+    font-size: 7vw;
+    animation: fade 1s;
+}
+
+.slogan {
+    text-align: end;
+    margin-top: 15vw;
+    right: 0%;
+    animation: fade 1s;
+    font-size: 6vw;
+    z-index: 1;
+    color: var(--def-black);
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 36.882px;
+}
+
+.answer {
+    font-size: var(--def-font-size);
+    font-weight: lighter;
+    color: var(--def-black);
+}
+
+.parent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    z-index: -1;
+}
+
+.parent>div {
+    width: 200.88px;
+    height: 300.6px;
+    border-radius: 5px;
+    border: 3px solid #000;
+    border-bottom: 100px solid #000;
+    margin-top: 1%;
+}
+
+@keyframes downtoup {
+    from {
+        opacity: 0;
+        transform: translateY(80%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(60%);
+    }
+}
+
+@keyframes uptodown {
+    from {
+        opacity: 0;
+        transform: translateY(0%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(20%);
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
