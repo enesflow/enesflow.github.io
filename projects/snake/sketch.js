@@ -70,7 +70,12 @@ function draw() {
         deadtext.innerHTML = "Dead! Score: " + (lenght - 4);
         isdead = true;
     }
-    if (x < 0 || x > width - sWidth || y < 0 || y > height - sWidth) {
+    if (
+        x < 0 - sWidth ||
+        x > width - sWidth ||
+        y < 0 - sHeight ||
+        y > height - sHeight
+    ) {
         deadscreen.style.display = "inline-block";
         document.querySelector(".p5Canvas").style.display = "none";
         deadtext.innerHTML = "Dead! Score: " + (lenght - 4);
