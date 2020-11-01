@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+:root {
+    --the-border: white;
+    --the-hover-border: #979090;
+}
+
+* {
+    transition: all 0.25s ease;
+    overflow: hidden;
+} 
+
+* {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+.row {
+    text-align: center;
+}
+
+.card.done {
+    cursor: default;
+    border-radius: 0px;
+}
+
+.all {
+    background: solid black;
+}
+
+.card {
+    background-attachment: fixed;
+    display: inline-block;
+    width: min(13.66vh, 13.66vw);
+    height: min(13.66vh, 13.66vw);
+    background: #ddd7d7;
+    transition: all 0.25s ease;
+    cursor: pointer;
+    border: 1px solid #ddd7d7;
+    border-radius: min(5.5vh, 5.5vw);
+}
+
+.card:hover {
+    filter: brightness(95%);
+    border: 1px solid var(--the-hover-border);
+}
+
+.card.done {
+    filter: brightness(100%);
+    border: none;
+    border-radius: 0px;
+    box-sizing: border-box;
+}
+
+.red {
+    background: red;
+}
+
+.green {
+    background: lightgreen;
+}
+
+.darkblue {
+    background: darkblue;
+}
+
+.yellow {
+    background: yellow;
+}
+
+.orange {
+    background: darkorange;
+}
+
+.pink {
+    background: lightpink;
+}
+
+.purple {
+    background: purple;
+}
+
+.blue {
+    background: lightskyblue;
+}
+
+.color-hidden {
+    background: #ddd7d7;
+}
+
+.upheader {
+    color: rgb(30, 30, 30);
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-size: 3.25vw;
+    font-weight: lighter;
+}
+
+.restart-button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    width: 10.928vw;
+}
+
+.restart-button:hover {
+    transform: rotate(45deg)
+}
+
+.switch-button {
+    position: fixed;
+    margin-top: 10vh;
+    cursor: pointer;
+    width: 10vh;
+    height: 10vh;
+}
+
+.switch-button:hover {
+    filter: invert(15%);
+}

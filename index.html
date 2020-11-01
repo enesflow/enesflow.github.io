@@ -2,71 +2,129 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="../github.svg">
-    <title>EnxGitHub - Home</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description" content="I like bananas">
+    <meta name="keywords" content="Enes, Enx, Enxgithub, Enes Kavçakar, Fahrettin Enes Kavçakar">
+    <meta name="author" content="Enes Kavçakar">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="icon" href="github.svg">
+    <title>Enx - Home</title>
 </head>
 
 <body>
 
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo">&nbsp;Enx</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#projects">Projects</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <div id="loader" class="loader">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
+    <div id="projects">
+        <h1 class="center-align">Projects</h1>
+        <div class="row">
+            <div class="col xl3 l4 m6 s12">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="_images/snakeicon.png">
+                        <span class="card-title">Snake</span>
+                    </div>
+                    <div class="card-content">
+                        <blockquote>A classic snake game made in JavaScript using p5.js</blockquote>
+                    </div>
+                    <div class="card-action">
+                        <a href="projects/snake">Go to the project</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col xl3 l4 m6 s12">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="_images/clockicon.png">
+                        <span class="card-title">Clock</span>
+                    </div>
+                    <div class="card-content">
+                        <blockquote>A cool clock made in JavaScript using p5.js</blockquote>
+                    </div>
+                    <div class="card-action">
+                        <a href="projects/clock/">Go to the project</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col xl3 l4 m6 s12">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="_images/memorygameicon.png">
+                        <span class="card-title">Memory game</span>
+                    </div>
+                    <div class="card-content">
+                        <blockquote>A card flipping game made in vanilla JavaScript</blockquote>
+                    </div>
+                    <div class="card-action">
+                        <a href="projects/memorygame/">Go to the project</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col xl3 l4 m6 s12">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="_images/guessthecoloricon.png">
+                        <span class="card-title">Guess the Color</span>
+                    </div>
+                    <div class="card-content">
+                        <blockquote>A color guessing game made in vanilla JavaScript
+                        </blockquote>
+                    </div>
+                    <div class="card-action">
+                        <a href="projects/guessthecolor/">Go to the project</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col xl3 l4 m6 s12">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="_images/aiicon.jpg">
+                        <span class="card-title">Image Recognition AI</span>
+                    </div>
+                    <div class="card-content">
+                        <blockquote>Image Recognition AI made with ml5.js and p5.js</blockquote>
+                    </div>
+                    <div class="card-action">
+                        <a href="projects/imagerecognitionai/">Go to the project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <h1 class="title" id="maintitle">EnxGitHub</h1>
-    <br>
-    <div class="whiteback"></div>
-    <h1 class="title" id="projectstitle">Projects</h1>
-    <div class="parent">
-        <div class="snake project">
-            <a href="./snake">
-                <img class="img" src="_images/snakeicon.png" alt="Snake" width="250" height="250">
-            </a>
-            <h1>Snake</h1>
-            <p>A classic snake game made in JavaScript using p5.js</p>
-        </div>
-        <div class="clock project">
-            <a href="./clock">
-                <img class="img" src="_images/clockicon.png" alt="Clock" width="250" height="250">
-            </a>
-            <h1>Clock</h1>
-            <p>A cool clock made in JavaScript using p5.js</p>
-        </div>
-        <div class="memorygame project">
-            <a href="./memorygame">
-                <img class="img" src="_images/memorygameicon.png" alt="Memory Game" width="250" height="250">
-            </a>
-            <h1>Memory Game</h1>
-            <p>A card flipping game to test your memory</p>
-        </div>
-        <div class="guessthecolor project">
-            <a href="./guessthecolor">
-                <img class="img" src="_images/guessthecoloricon.png" alt="Guess the Color" width="250" height="250">
-            </a>
-            <h1>Guess the Color</h1>
-            <p>Guess the given color by the RGB value</p>
-        </div>
-        <div class="aiimage project">
-            <a href="./ai">
-                <img class="img" src="_images/ai.jpg" alt="Image Recognition AI" width="250" height="250">
-            </a>
-            <h1>Image Recognition AI</h1>
-            <p>Image Recognition AI made with ml5.js and p5.js</p>
-        </div>
-    </div>
-    <br>
-    <br>
-    <a id="trouble" href="../trouble">
-        <h3>Having Trouble?</h3>
-    </a>
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="#projects">Projects</a></li>
+    </ul>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="main.js"></script>
 </body>
+
+>>>>>>> 6ecdaf3 (2.0 version)
 
 </html>
