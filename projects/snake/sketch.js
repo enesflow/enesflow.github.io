@@ -11,11 +11,11 @@ let height = width;
 var sWidth = width / 25;
 var sHeight = height / 25;
 
-var x = 0 - sWidth /* + sWidth*/ ;
-var y = 0 /*sWidth*/ ;
+var x = 0 - sWidth; /* + sWidth*/
+var y = 0; /*sWidth*/
 
-var fx = Math.floor(random(0, width) / (sWidth)) * sWidth;
-var fy = Math.floor(random(0, height) / (sWidth)) * sWidth;
+var fx = Math.floor(random(0, width) / sWidth) * sWidth;
+var fy = Math.floor(random(0, height) / sWidth) * sWidth;
 
 var orn = [1, 0];
 
@@ -28,88 +28,70 @@ const tol = 2;
 
 var isdead = false;
 
-
 const deadscreen = document.getElementById("dead");
 const deadtext = document.getElementById("deadtext");
 
-
-document.onkeypress=function(e){
+document.onkeypress = function (e) {
     if (isdead) {
         location.reload();
     }
-}
-deadscreen.addEventListener("click", function() {
+};
+deadscreen.addEventListener("click", function () {
     if (isdead) {
         location.reload();
     }
 });
 
-
 function setup() {
     createCanvas(width, height);
     background(bcolor);
     frameRate(5);
-
 }
 
 function draw() {
-
-
     width = Math.min(innerWidth, innerHeight) - sizesub;
     height = width;
 
-
-
     keyPressed();
 
-
-    if ((posListx.length) > lenght - 1) {
+    if (posListx.length > lenght - 1) {
         posListx.shift();
         posListy.shift();
     }
-
-
 
     posListx.push(x);
     posListy.push(y);
     x += orn[0] * sWidth;
     y += orn[1] * sHeight;
 
-
     if (amiin(x, y)) {
         deadscreen.style.display = "inline-block";
-        deadtext.innerHTML = ("Dead! Score: " + (lenght - 4));
+        document.querySelector(".p5Canvas").style.display = "none";
+        deadtext.innerHTML = "Dead! Score: " + (lenght - 4);
         isdead = true;
-
     }
-    if (((x < 0) || (x > (width - sWidth)) || ((y < 0) || (y > (height - sWidth))))) {
+    if (x < 0 || x > width - sWidth || y < 0 || y > height - sWidth) {
         deadscreen.style.display = "inline-block";
-        deadtext.innerHTML = ("Dead! Score: " + (lenght - 4));
+        document.querySelector(".p5Canvas").style.display = "none";
+        deadtext.innerHTML = "Dead! Score: " + (lenght - 4);
         isdead = true;
-
     }
 
-    if (((x + tol >= fx) && (x - tol <= fx)) && ((y + tol >= fy) && (y - tol <= fy))) {
+    if (x + tol >= fx && x - tol <= fx && y + tol >= fy && y - tol <= fy) {
         lenght += 1;
         while (true) {
-            fx = Math.floor(random(0, width) / (sWidth)) * sWidth;
-            fy = Math.floor(random(0, height) / (sWidth)) * sWidth;
+            fx = Math.floor(random(0, width) / sWidth) * sWidth;
+            fy = Math.floor(random(0, height) / sWidth) * sWidth;
             if (amiin(fx, fy)) {
-                continue
+                continue;
             }
             break;
         }
-
     }
-
 
     drawSnake();
     snakeRemover();
     drawFood();
-
-
-
-
 }
 
 function keyPressed() {
@@ -138,16 +120,16 @@ function amiin(wx, wy) {
 }
 
 function or(what) {
-    if ((what === "left") && (orn[0] != 1)) {
+    if (what === "left" && orn[0] != 1) {
         orn = [-1, 0];
     }
-    if ((what === "right") && (orn[0] != -1)) {
+    if (what === "right" && orn[0] != -1) {
         orn = [1, 0];
     }
-    if ((what === "down") && (orn[1] != -1)) {
+    if (what === "down" && orn[1] != -1) {
         orn = [0, 1];
     }
-    if ((what === "up") && (orn[1] != 1)) {
+    if (what === "up" && orn[1] != 1) {
         orn = [0, -1];
     }
 }
@@ -168,22 +150,24 @@ function drawFood() {
 }
 
 //Stackoverflow
-document.addEventListener('touchstart', handleTouchStart, false);
-document.addEventListener('touchmove', handleTouchMove, false);
+document.addEventListener("touchstart", handleTouchStart, false);
+document.addEventListener("touchmove", handleTouchMove, false);
 
 var xDown = null;
 var yDown = null;
 
 function getTouches(evt) {
-    return evt.touches || // browser API
-        evt.originalEvent.touches; // jQuery
+    return (
+        evt.touches || // browser API
+        evt.originalEvent.touches
+    ); // jQuery
 }
 
 function handleTouchStart(evt) {
     const firstTouch = getTouches(evt)[0];
     xDown = firstTouch.clientX;
     yDown = firstTouch.clientY;
-};
+}
 
 function handleTouchMove(evt) {
     if (!xDown || !yDown) {
@@ -213,4 +197,4 @@ function handleTouchMove(evt) {
     /* reset values */
     xDown = null;
     yDown = null;
-};
+}

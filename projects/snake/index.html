@@ -7,13 +7,18 @@
     <title>Snake</title>
     <style media="screen">
         * {
-            position: absolute;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            left: 50%;
-            transform: translateX(-50%);
             font-family: sans-serif;
+            overflow: hidden;
+        }
+
+        .p5Canvas {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
         }
 
         .dead {
@@ -23,7 +28,8 @@
             z-index: 1;
             display: none;
         }
-        .dead > h1 {
+
+        .dead>h1 {
             font-size: 12vw;
             position: absolute;
             top: 50%;
@@ -31,14 +37,16 @@
             transform: translate(-50%, -50%);
             text-align: center;
         }
-        .hey{
+
+        .hey {
             position: absolute;
             margin-right: 45vw;
             margin-top: 90vh;
             width: 100%;
 
         }
-        .hey > h5 {
+
+        .hey>h5 {
             font-size: 3vw;
             white-space: nowrap;
         }
@@ -46,7 +54,12 @@
 </head>
 
 <body>
-    <div id="dead" class="dead"><h1 id="deadtext">You do not see this!</h1><div class="hey"><h5 id="pressakey">Press any key or tap the screen to restart</h5></div></div>
+    <div id="dead" class="dead">
+        <h1 id="deadtext">You do not see this!</h1>
+        <div class="hey">
+            <h5 id="pressakey">Press any key or tap the screen to restart</h5>
+        </div>
+    </div>
 
     <script src="p5.min.js"></script>
     <script src="sketch.js"></script>
