@@ -12,6 +12,10 @@ nav {
   background-color: #6f43a4;
 }
 
+.card .timg {
+  height: 350px !important;
+}
+
 .card .card-image {
   width: 250px !important;
   margin: auto;
