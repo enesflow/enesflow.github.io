@@ -42,6 +42,7 @@ html {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  display: none;
 }
 
 .intro .wannascroll {

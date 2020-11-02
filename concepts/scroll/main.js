@@ -1,5 +1,4 @@
 const container = document.querySelector(".intro");
-const video = container.querySelector(".video");
 const skip = document.querySelector(".skip");
 const goback = document.querySelector(".goback");
 const pics = 714;
@@ -9,8 +8,11 @@ let attop = 0;
 let scrolled;
 
 for (let i = 1; i <= pics; i++) {
-    video.src = `${folder}/video ${Math.ceil(i)}.jpg`;
-    console.log("I did ");
+    $(".intro").append(
+        `<img class="video" src="${folder}/video ${Math.ceil(
+            i
+        )}.jpg" preload></img>`
+    );
 }
 window.onload = function () {
     function btnchng(btn, dsply) {
@@ -52,10 +54,6 @@ window.onload = function () {
     });
     scrolled = false;
     setInterval(() => {
-        $(intro).css("height", "100vh");
-        $(video).css("width", "100%");
-        $(video).css("height", "100%");
-        $(video).css("object-fit", "cover");
         if ($(document).scrollTop() === 0 && !scrolled) {
             attop++;
         } else {
@@ -77,9 +75,13 @@ window.onload = function () {
         if (frame <= pics) {
             //console.log(frame, ac);
 
-            video.src = `${folder}/video ${Math.ceil(frame)}.jpg`;
+            $(".video").css("display", "none");
+            $(`.video[src='${folder}/video ${Math.ceil(frame)}.jpg']`).css(
+                "display",
+                "block"
+            );
         } else {
-            video.src = `${folder}/video ${Math.ceil(pics)}.jpg`;
+            //video.src = `${folder}/video ${Math.ceil(pics)}.jpg`;
         }
         if (frame > pics / 30) {
             btnchng(skip, true);
