@@ -47,13 +47,15 @@ function imageReady() {
 function setup() {
     var mycanvas = createCanvas(windowWidth, windowHeight);
     mycanvas.parent("#container");
+    input = createFileInput(gotFile);
+    input.position(10, height - 50);
     $("#container").append(
         '<div id="dropzone" class="col s12">Drop your image here!</div>'
     );
+    $("input[type='file']").attr("id", "file");
     background(255);
     var dropzone = select("#dropzone");
     dropzone.dragOver(highlight);
     dropzone.dragLeave(unhighlight);
     dropzone.drop(gotFile, unhighlight);
 }
-
