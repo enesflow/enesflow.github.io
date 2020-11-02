@@ -51,6 +51,17 @@ window.onload = function () {
         if ($(document).scrollTop() !== 0 && !scrolled) {
             scrolled = true;
         }
+        if (frame <= pics) {
+            //console.log(frame, ac);
+
+            $(".video").css("display", "none");
+            $(`.video[src='${folder}/video ${Math.ceil(frame)}.jpg']`).css(
+                "display",
+                "block"
+            );
+        } else {
+            //video.src = `${folder}/video ${Math.ceil(pics)}.jpg`;
+        }
     });
     scrolled = false;
     setInterval(() => {
@@ -72,17 +83,6 @@ window.onload = function () {
             document.querySelector(".wannascroll").style.pointerEvents = "none";
         }
         //console.log(attop);
-        if (frame <= pics) {
-            //console.log(frame, ac);
-
-            $(".video").css("display", "none");
-            $(`.video[src='${folder}/video ${Math.ceil(frame)}.jpg']`).css(
-                "display",
-                "block"
-            );
-        } else {
-            //video.src = `${folder}/video ${Math.ceil(pics)}.jpg`;
-        }
         if (frame > pics / 30) {
             btnchng(skip, true);
         } else {
