@@ -49,6 +49,7 @@ function setup() {
     mycanvas.parent("#container");
     input = createFileInput(gotFile);
     input.position(10, height - 50);
+
     $("#container").append(
         '<div id="dropzone" class="col s12">Drop your image here!</div>'
     );
