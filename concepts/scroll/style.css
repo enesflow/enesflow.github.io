@@ -1,0 +1,114 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #191b1c;
+}
+
+::-moz-selection {
+  background: #191b1c;
+  color: white;
+}
+
+::selection {
+  background: #191b1c;
+  color: white;
+}
+
+.intro {
+  height: 100vh;
+}
+
+.intro .video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.intro .wannascroll {
+  width: 25%;
+  height: 10vh;
+  background: white;
+  text-align: center;
+  position: fixed;
+  top: 1%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.intro .wannascroll div {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.intro .wannascroll p {
+  font-size: 20pt;
+}
+
+.intro .title {
+  position: absolute;
+  opacity: 0.25;
+  font-weight: bolder;
+  right: 0;
+  bottom: 0;
+  font-size: 50pt;
+  color: white;
+}
+
+.intro .skip,
+.intro .goback {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  left: 1%;
+  bottom: 1%;
+}
+
+.intro .goback {
+  bottom: -99%;
+}
+
+.container {
+  height: 100vh;
+}
+
+.container .row {
+  padding-top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.container .row .title {
+  font-size: 50pt;
+}
+
+.container .row .btn {
+  -webkit-transform: translateY(10%);
+          transform: translateY(10%);
+}
+/*# sourceMappingURL=style.css.map */

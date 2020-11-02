@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Scroll</title>
+</head>
+
+<body>
+    <div class="intro" id="intro">
+        <h1 class="title">Dora Design</h1>
+        <div class="wannascroll btn btn-flat" onclick="scrolled = true">
+            <div>
+                <i class="material-icons left black-text">help</i>
+                <p>You can scroll</p>
+            </div>
+        </div>
+        <a class="skip btn btn-flat btn-small waves-effect waves-light black-text grey lighten-4" href="#container">
+            <i class="material-icons left black-text">arrow_downward</i>Skip</a>
+        <a class="goback btn btn-flat btn-small waves-effect waves-light white-text grey darken-4"
+            onclick="window.scrollTo(0,0)" href="#">
+            <i class="material-icons left white-text">arrow_upward</i>Go back</a>
+        <img class="video" src="/frames/video 1.jpg" preload></img>
+    </div>
+    <div class="container" id="container">
+        <div class="row">
+            <h1 class="title col s12 center-align">Design your website with us</h1>
+            <button class="btn btn-large btn-flat waves-effect waves-light grey darken-4
+                white-text col s4 push-s4">Join
+                now</button>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"
+        integrity="sha512-HzAEuXwhLxwm/Jj+5ecdjzrRVrjuh2ZeIxyT1Ln37TO5pWNMnKBuU7cfd1wvRQ/k86w1oC174Yk1T7aRlBpIcA=="
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
