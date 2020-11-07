@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.min.css">
 
     <link rel="icon" href="github.svg">
     <title>Enx - Home</title>
@@ -19,16 +19,18 @@
 
 <body>
 
-    <nav>
-        <div class="nav-wrapper">
-            <a href="#!" class="brand-logo">&nbsp;Enx</a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="#trouble">Having Trouble</a></li>
-                <li><a href="#projects">Projects</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#!" class="brand-logo">&nbsp;Enx</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#trouble">Having Trouble</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
 
     <ul class="sidenav" id="mobile-demo">
         <li><a href="#trouble">Having Trouble</a></li>
@@ -37,7 +39,7 @@
 
 
 
-    <div id="projects">
+    <div id="projects" class="projects">
         <h1 class="center-align">Projects</h1>
         <div class="row">
             <div class="col xl3 l4 m6 s12">
@@ -122,7 +124,7 @@
         </div>
     </div>
 
-    <div id="trouble">
+    <div id="trouble" class="trouble">
         <h1 class="center-align">Having Trouble</h1>
 
         <div class="row">

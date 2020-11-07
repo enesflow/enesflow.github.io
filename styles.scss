@@ -1,5 +1,5 @@
-$blue: #4285f4;
-$purp: #6f43a4;
+$purple: #6F43A4;
+$orange: #F6820C;
 
 @mixin noSelect {
     user-select: none;
@@ -11,7 +11,7 @@ $purp: #6f43a4;
 }
 
 nav {
-    background-color: $purp;
+    background-color: $purple;
 }
 
 .card {
@@ -34,11 +34,38 @@ nav {
     }
     .card-action {
         a {
-            color: $purp !important;
             font-weight: bold;
         }
     }
 }
-blockquote {
-    border-color: $purp;
+.projects {
+    h1 {
+        color: $purple;
+    }
+    a {
+        color: $purple !important;
+    }
+    blockquote {
+        border-color: $purple;
+    }
+}
+.trouble {
+    h1 {
+        color: $orange;
+    }
+    a {
+        color: $orange !important;
+    }
+    blockquote {
+        border-color: $orange;
+    }
+}
+
+.card-action {
+    a {
+        transition: all 0.25s ease !important;
+        &:hover {
+            filter: brightness(1.25);
+        }
+    }
 }
