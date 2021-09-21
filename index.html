@@ -1,188 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="I like bananas" />
+		<meta
+			name="keywords"
+			content="Enes, Enx, Enxgithub, Enes Kavçakar, Fahrettin Enes Kavçakar"
+		/>
+		<meta name="author" content="Enes Kavçakar" />
 
-    <meta name="description" content="I like bananas">
-    <meta name="keywords" content="Enes, Enx, Enxgithub, Enes Kavçakar, Fahrettin Enes Kavçakar">
-    <meta name="author" content="Enes Kavçakar">
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+		/>
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="styles.min.css" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="styles.min.css">
+		<link rel="icon" href="github.svg" />
+		<title>Enx - Home</title>
+	</head>
 
-    <link rel="icon" href="github.svg">
-    <title>Enx - Home</title>
-</head>
+	<body>
+		<div class="navbar-fixed">
+			<nav>
+				<div class="nav-wrapper">
+					<a href="#!" class="brand-logo">&nbsp;Enx</a>
+					<a
+						href="#"
+						data-target="mobile-demo"
+						class="sidenav-trigger"
+						><i class="material-icons">menu</i></a
+					>
+					<ul class="right hide-on-med-and-down">
+						<li><a href="#trouble">Having Trouble</a></li>
+						<li><a href="#projects">Projects</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
 
-<body>
+		<ul class="sidenav" id="mobile-demo">
+			<li><a href="#trouble">Having Trouble</a></li>
+			<li><a href="#projects">Projects</a></li>
+		</ul>
 
-    <div class="navbar-fixed">
-        <nav>
-            <div class="nav-wrapper">
-                <a href="#!" class="brand-logo">&nbsp;Enx</a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="#trouble">Having Trouble</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                </ul>
-            </div>
-        </nav>
-    </div>
+		<div id="projects" class="projects">
+			<h1 class="center-align">Projects</h1>
+			<div class="row">
+				<div class="col xl3 l4 m6 s12">
+					<div class="card">
+						<div class="card-image">
+							<img src="_images/snakeicon.png" />
+							<span class="card-title">Snake</span>
+						</div>
+						<div class="card-content">
+							<blockquote>
+								A classic snake game made in JavaScript using
+								p5.js
+							</blockquote>
+						</div>
+						<div class="card-action">
+							<a href="projects/snake">Go to the project</a>
+						</div>
+					</div>
+				</div>
 
-    <ul class="sidenav" id="mobile-demo">
-        <li><a href="#trouble">Having Trouble</a></li>
-        <li><a href="#projects">Projects</a></li>
-    </ul>
+				<div class="col xl3 l4 m6 s12">
+					<div class="card">
+						<div class="card-image">
+							<img src="_images/clockicon.png" />
+							<span class="card-title">Clock</span>
+						</div>
+						<div class="card-content">
+							<blockquote>
+								A cool clock made in JavaScript using p5.js
+							</blockquote>
+						</div>
+						<div class="card-action">
+							<a href="projects/clock/">Go to the project</a>
+						</div>
+					</div>
+				</div>
 
+				<div class="col xl3 l4 m6 s12">
+					<div class="card">
+						<div class="card-image">
+							<img src="_images/memorygameicon.png" />
+							<span class="card-title">Memory game</span>
+						</div>
+						<div class="card-content">
+							<blockquote>
+								A card flipping game made in vanilla JavaScript
+							</blockquote>
+						</div>
+						<div class="card-action">
+							<a href="projects/memorygame/">Go to the project</a>
+						</div>
+					</div>
+				</div>
 
+				<div class="col xl3 l4 m6 s12">
+					<div class="card">
+						<div class="card-image">
+							<img src="_images/guessthecoloricon.png" />
+							<span class="card-title">Guess the Color</span>
+						</div>
+						<div class="card-content">
+							<blockquote>
+								A color guessing game made in vanilla JavaScript
+							</blockquote>
+						</div>
+						<div class="card-action">
+							<a href="projects/guessthecolor/"
+								>Go to the project</a
+							>
+						</div>
+					</div>
+				</div>
 
-    <div id="projects" class="projects">
-        <h1 class="center-align">Projects</h1>
-        <div class="row">
-            <div class="col xl3 l4 m6 s12">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="_images/snakeicon.png">
-                        <span class="card-title">Snake</span>
-                    </div>
-                    <div class="card-content">
-                        <blockquote>A classic snake game made in JavaScript using p5.js</blockquote>
-                    </div>
-                    <div class="card-action">
-                        <a href="projects/snake">Go to the project</a>
-                    </div>
-                </div>
-            </div>
+				<div class="col xl3 l4 m6 s12">
+					<div class="card">
+						<div class="card-image">
+							<img src="_images/aiicon.jpg" />
+							<span class="card-title">Image Recognition AI</span>
+						</div>
+						<div class="card-content">
+							<blockquote>
+								Image Recognition AI made with ml5.js and p5.js
+							</blockquote>
+						</div>
+						<div class="card-action">
+							<a href="projects/imagerecognitionai/"
+								>Go to the project</a
+							>
+						</div>
+					</div>
+				</div>
 
+				<div class="col xl3 l4 m6 s12">
+					<div class="card">
+						<div class="card-image">
+							<img src="projects/kuş-dili/bird.svg" />
+							<span class="card-title">Bird Language</span>
+						</div>
+						<div class="card-content">
+							<blockquote>
+								Convert normal text into bird language
+							</blockquote>
+						</div>
+						<div class="card-action">
+							<a href="projects/kuş-dili/">Go to the project</a>
+						</div>
+					</div>
+				</div>
 
-            <div class="col xl3 l4 m6 s12">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="_images/clockicon.png">
-                        <span class="card-title">Clock</span>
-                    </div>
-                    <div class="card-content">
-                        <blockquote>A cool clock made in JavaScript using p5.js</blockquote>
-                    </div>
-                    <div class="card-action">
-                        <a href="projects/clock/">Go to the project</a>
-                    </div>
-                </div>
-            </div>
+				<div class="col xl3 l4 m6 s12">
+					<div class="card">
+						<div class="card-image">
+							<img src="_images/pomodoro.png" />
+							<span class="card-title">Pomodoro</span>
+						</div>
+						<div class="card-content">
+							<blockquote>
+								A simple pomodoro timer for studying!
+							</blockquote>
+						</div>
+						<div class="card-action">
+							<a href="projects/pomodoro/">Go to the project</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
+		<div id="trouble" class="trouble">
+			<h1 class="center-align">Having Trouble</h1>
 
-            <div class="col xl3 l4 m6 s12">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="_images/memorygameicon.png">
-                        <span class="card-title">Memory game</span>
-                    </div>
-                    <div class="card-content">
-                        <blockquote>A card flipping game made in vanilla JavaScript</blockquote>
-                    </div>
-                    <div class="card-action">
-                        <a href="projects/memorygame/">Go to the project</a>
-                    </div>
-                </div>
-            </div>
+			<div class="row">
+				<div class="col xl6 l6 m6 s12 service" id="firebase">
+					<div class="card">
+						<div class="card-image timg">
+							<img src="_images/firebase.svg" />
+							<span class="card-title">Firebase</span>
+						</div>
+						<div class="card-content">
+							<blockquote>See the projet on Firebase</blockquote>
+						</div>
+						<div class="card-action">
+							<a href="https://enx--github.web.app"
+								>Go to Firebase</a
+							>
+						</div>
+					</div>
+				</div>
 
+				<div class="col xl6 l6 m6 s12 service" id="netlify">
+					<div class="card">
+						<div class="card-image timg">
+							<img src="_images/netlify.svg" />
+							<span class="card-title">Netlify</span>
+						</div>
+						<div class="card-content">
+							<blockquote>See the projet on Netlify</blockquote>
+						</div>
+						<div class="card-action">
+							<a href="https://enxgithub.netlify.app"
+								>Go to Netlify</a
+							>
+						</div>
+					</div>
+				</div>
 
-            <div class="col xl3 l4 m6 s12">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="_images/guessthecoloricon.png">
-                        <span class="card-title">Guess the Color</span>
-                    </div>
-                    <div class="card-content">
-                        <blockquote>A color guessing game made in vanilla JavaScript
-                        </blockquote>
-                    </div>
-                    <div class="card-action">
-                        <a href="projects/guessthecolor/">Go to the project</a>
-                    </div>
-                </div>
-            </div>
+				<div class="col xl6 l6 m6 s12 service" id="github">
+					<div class="card">
+						<div class="card-image timg">
+							<img src="_images/github.svg" />
+							<span class="card-title">Github Pages</span>
+						</div>
+						<div class="card-content">
+							<blockquote>
+								See the projet on Github Pages
+							</blockquote>
+						</div>
+						<div class="card-action">
+							<a href="https://enxgithub.github.io"
+								>Go to Github Pages</a
+							>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-
-            <div class="col xl3 l4 m6 s12">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="_images/aiicon.jpg">
-                        <span class="card-title">Image Recognition AI</span>
-                    </div>
-                    <div class="card-content">
-                        <blockquote>Image Recognition AI made with ml5.js and p5.js</blockquote>
-                    </div>
-                    <div class="card-action">
-                        <a href="projects/imagerecognitionai/">Go to the project</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="trouble" class="trouble">
-        <h1 class="center-align">Having Trouble</h1>
-
-        <div class="row">
-            <div class="col xl6 l6 m6 s12 service" id="firebase">
-                <div class=" card ">
-                    <div class="card-image timg">
-                        <img src="_images/firebase.svg">
-                        <span class="card-title">Firebase</span>
-                    </div>
-                    <div class="card-content">
-                        <blockquote>See the projet on Firebase</blockquote>
-                    </div>
-                    <div class="card-action">
-                        <a href="https://enx--github.web.app">Go to Firebase</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col xl6 l6 m6 s12 service" id="netlify">
-                <div class="card ">
-                    <div class="card-image timg">
-                        <img src="_images/netlify.svg">
-                        <span class="card-title">Netlify</span>
-                    </div>
-                    <div class="card-content">
-                        <blockquote>See the projet on Netlify</blockquote>
-                    </div>
-                    <div class="card-action">
-                        <a href="https://enxgithub.netlify.app">Go to Netlify</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col xl6 l6 m6 s12 service" id="github">
-                <div class="card ">
-                    <div class="card-image timg">
-                        <img src="_images/github.svg">
-                        <span class="card-title">Github Pages</span>
-                    </div>
-                    <div class="card-content">
-                        <blockquote>See the projet on Github Pages</blockquote>
-                    </div>
-                    <div class="card-action">
-                        <a href="https://enxgithub.github.io">Go to Github Pages</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-	<!--Google AdSense-->
-	<script data-ad-client="ca-pub-5639648878950373" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="main.js"></script>
-</body>
-
-
+		<!--Google AdSense-->
+		<script
+			data-ad-client="ca-pub-5639648878950373"
+			async
+			src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+		></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+		<script src="main.js"></script>
+	</body>
 </html>
