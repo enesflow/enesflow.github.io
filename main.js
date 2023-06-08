@@ -17,5 +17,6 @@ document.addEventListener("DOMContentLoaded", function () {
 // Or with jQuery
 
 $(document).ready(function () {
+    alert("Disclaimer: This is an old site, these projects don't represent my current skills and abilities, visit github.com/enesflow for more projects")
     $(".sidenav").sidenav();
 });
